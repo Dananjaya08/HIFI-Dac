@@ -22,7 +22,7 @@ export default () => (
     {/* USB-C Port 1: Data + Power (Main) */}
     <chip
       name="USB_C1"
-      footprint="sip12"
+      footprint="pinrow12"
       pinLabels={{
         pin1: "GND1",
         pin2: "TX1P",
@@ -50,7 +50,7 @@ export default () => (
     {/* USB-C Port 2: Power Only (Desktop Mode) */}
     <chip
       name="USB_C2"
-      footprint="sip6"
+      footprint="pinrow6"
       pinLabels={{
         pin1: "GND1",
         pin2: "VBUS1",
@@ -67,7 +67,7 @@ export default () => (
 
     <chip
       name="U_PD"
-      footprint="ssop10_p0.5mm"
+      footprint="tssop10_p0.5mm"
       pinLabels={{
         pin1: "VDD",
         pin2: "CFG1",
@@ -267,7 +267,7 @@ export default () => (
 
     <chip
       name="U_XMOS"
-      footprint="qfn60_w7_h7_p0.4mm_thermalpad"
+      footprint="qfn60_w7_h7_p0.4mm"
       pinLabels={{
         /* Power */
         pin1: "VDD_CORE",
@@ -358,7 +358,7 @@ export default () => (
     {/* DAC Left Channel */}
     <chip
       name="DAC_L"
-      footprint="qfn32_w5_h5_p0.5mm_thermalpad"
+      footprint="qfn32_w5_h5_p0.5mm"
       pinLabels={{
         pin1: "DVDD",
         pin2: "DGND",
@@ -429,7 +429,7 @@ export default () => (
     {/* DAC Right Channel */}
     <chip
       name="DAC_R"
-      footprint="qfn32_w5_h5_p0.5mm_thermalpad"
+      footprint="qfn32_w5_h5_p0.5mm"
       pinLabels={{
         pin1: "DVDD",
         pin2: "DGND",
@@ -610,7 +610,7 @@ export default () => (
     {/* 4.4mm Balanced Output Jack */}
     <chip
       name="JACK_BAL"
-      footprint="sip5"
+      footprint="pinrow5"
       pinLabels={{
         pin1: "L_PLUS",
         pin2: "L_MINUS",
@@ -633,7 +633,7 @@ export default () => (
     {/* 3.5mm Single-Ended + SPDIF + Mic (TRRS Jack) */}
     <chip
       name="JACK_SE"
-      footprint="sip5"
+      footprint="pinrow5"
       pinLabels={{
         pin1: "TIP",
         pin2: "RING1",
@@ -664,7 +664,7 @@ export default () => (
 
     <chip
       name="U_JACK_SW"
-      footprint="qfn16_w3_h3_p0.5mm_thermalpad"
+      footprint="qfn16_w3_h3_p0.5mm"
       pinLabels={{
         pin1: "MIC_IN",
         pin2: "AGND_IN",
@@ -705,7 +705,7 @@ export default () => (
     {/* 0.96" OLED Display (I2C) */}
     <chip
       name="OLED"
-      footprint="sip4"
+      footprint="pinrow4"
       pinLabels={{
         pin1: "GND",
         pin2: "VCC",
@@ -721,7 +721,7 @@ export default () => (
     {/* Rotary Encoder (with RC debounce) */}
     <chip
       name="ENCODER"
-      footprint="sip5"
+      footprint="pinrow5"
       pinLabels={{
         pin1: "A",
         pin2: "B",
@@ -761,9 +761,9 @@ export default () => (
     <trace from=".ENCODER .COM2" to="net.GND" />
 
     {/* Media Buttons with RC debounce */}
-    <chip name="BTN_NEXT" footprint="sip2" pinLabels={{ pin1: "IN", pin2: "OUT" }} />
-    <chip name="BTN_PREV" footprint="sip2" pinLabels={{ pin1: "IN", pin2: "OUT" }} />
-    <chip name="BTN_PLAY" footprint="sip2" pinLabels={{ pin1: "IN", pin2: "OUT" }} />
+    <chip name="BTN_NEXT" footprint="pinrow2" pinLabels={{ pin1: "IN", pin2: "OUT" }} />
+    <chip name="BTN_PREV" footprint="pinrow2" pinLabels={{ pin1: "IN", pin2: "OUT" }} />
+    <chip name="BTN_PLAY" footprint="pinrow2" pinLabels={{ pin1: "IN", pin2: "OUT" }} />
 
     <resistor name="R_BTN_N" resistance="10k" footprint="0402" />
     <resistor name="R_BTN_P" resistance="10k" footprint="0402" />
@@ -821,7 +821,7 @@ export default () => (
     <trace from=".RELAY_MUTE .COIL_A" to="net.DVDD_3V3" />
 
     {/* UHG Toggle Switch */}
-    <chip name="SW_UHG" footprint="sip2" pinLabels={{ pin1: "IN", pin2: "OUT" }} />
+    <chip name="SW_UHG" footprint="pinrow2" pinLabels={{ pin1: "IN", pin2: "OUT" }} />
     <resistor name="R_UHG" resistance="10k" footprint="0402" />
     <trace from=".SW_UHG .IN" to=".R_UHG .pin1" />
     <trace from=".R_UHG .pin2" to="net.VDD_PERIPH" />
