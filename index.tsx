@@ -267,7 +267,7 @@ export default () => (
 
     <chip
       name="U_XMOS"
-      footprint="qfn60_w7_h7_p0.4mm"
+      footprint="qfn60_w7_h7_p0.4mm_pw0.2mm_pl0.8mm"
       pinLabels={{
         /* Power */
         pin1: "VDD_CORE",
@@ -358,7 +358,7 @@ export default () => (
     {/* DAC Left Channel */}
     <chip
       name="DAC_L"
-      footprint="qfn32_w5_h5_p0.5mm"
+      footprint="qfn32_w5_h5_p0.5mm_pw0.25mm_pl0.6mm"
       pinLabels={{
         pin1: "DVDD",
         pin2: "DGND",
@@ -429,7 +429,7 @@ export default () => (
     {/* DAC Right Channel */}
     <chip
       name="DAC_R"
-      footprint="qfn32_w5_h5_p0.5mm"
+      footprint="qfn32_w5_h5_p0.5mm_pw0.25mm_pl0.6mm"
       pinLabels={{
         pin1: "DVDD",
         pin2: "DGND",
@@ -664,7 +664,7 @@ export default () => (
 
     <chip
       name="U_JACK_SW"
-      footprint="qfn16_w3_h3_p0.5mm"
+      footprint="qfn16_w3_h3_p0.5mm_pw0.25mm_pl0.6mm"
       pinLabels={{
         pin1: "MIC_IN",
         pin2: "AGND_IN",
