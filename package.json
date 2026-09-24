@@ -1,0 +1,16 @@
+{
+  "name": "hifi-dac",
+  "version": "1.0.0",
+  "description": "Hi-Fi DAC Hardware Design using TS Circuit",
+  "scripts": {
+    "dev": "tsci dev"
+  },
+  "dependencies": {
+    "@tscircuit/core": "latest"
+  },
+  "devDependencies": {
+    "@tscircuit/cli": "latest",
+    "@types/react": "^18.0.0",
+    "typescript": "^5.0.0"
+  }
+}
