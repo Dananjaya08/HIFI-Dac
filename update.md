@@ -1,4 +1,4 @@
-# HIFI DAC Dongle Update v0.1
+# HIFI DAC Dongle Update v0.1.1
 
 ## Overview
 This is the first design update for the premium portable Hi-Fi DAC dongle concept. The design direction blends:
@@ -54,8 +54,19 @@ The board now better matches the desired product story:
 - minimal but high-end hardware expression
 - strong visual identity influenced by iBasso DC07 Pro and Bloon V1
 
+### 7. Desk-orientated USB-C placement refinement (v0.1.1)
+The USB-C layout was adjusted to better match the intended use case: the device sits on a desk with the transparent side facing upward.
+
+Key changes:
+- main USB-C data/power port moved to the top edge of the board
+- secondary USB-C port moved to the right edge for a more practical desk-use layout
+- power and PD routing concept kept close to the top-edge USB area
+- this avoids the previous side-edge arrangement that felt less natural for a visible tabletop product
+
+This update reflects a more product-realistic orientation for a premium DAC dongle that is viewed from above while resting on a desk.
+
 ## Design intent
-This v0.1 revision is not meant to be a final manufacturing-ready board. It is a refined concept pass that improves:
+This v0.1.1 revision is still a concept-level refinement, not a manufacturing-ready board. It improves:
 
 - board readability
 - functional zoning
@@ -67,4 +78,4 @@ This v0.1 revision is not meant to be a final manufacturing-ready board. It is a
 - [update.md](update.md)
 
 ## Status
-This revision is a concept-level refinement and a foundation for the next iteration toward a cleaner, more production-realistic hardware layout.
+This revision refines the desk-mounted orientation and keeps the concept aligned with the premium transparent-shell DAC direction. It remains a concept-stage iteration, with the next step focused on a cleaner final product layout.

@@ -1,10 +1,12 @@
 /**
  * Hi-Fi DAC Dongle Concept
  *
- * Concept direction:
- * - iBasso DC07 Pro styling: OLED screen + rotary knob + premium compact form factor
- * - Bloon V1 aesthetic: exposed internal board/view, transparent shell vibe
- * - Portable dual-mono balanced DAC with clean analog/digital partitioning
+ * Option 2: realistic product layout
+ * - front-panel controls grouped at the top-right for premium dongle styling
+ * - USB-C power at the left edge
+ * - digital core in the center-left zone
+ * - analog DAC and amplifier blocks on the right side
+ * - output jacks at the far right edge
  */
 
 export default () => (
@@ -12,23 +14,23 @@ export default () => (
     {/* Front panel / user interface */}
     <chip
       name="OLED"
-      pcbX="31mm"
-      pcbY="63mm"
+      pcbX="75mm"
+      pcbY="60mm"
       footprint="pinrow4"
       pinLabels={{ pin1: "GND", pin2: "VCC", pin3: "SCL", pin4: "SDA" }}
     />
 
     <chip
       name="KNOB"
-      pcbX="74mm"
-      pcbY="63mm"
+      pcbX="58mm"
+      pcbY="60mm"
       footprint="pinrow4"
       pinLabels={{ pin1: "A", pin2: "B", pin3: "SW", pin4: "COM" }}
     />
 
     <chip
       name="BTN_NEXT"
-      pcbX="58mm"
+      pcbX="65mm"
       pcbY="68mm"
       footprint="pinrow2"
       pinLabels={{ pin1: "SIG", pin2: "GND" }}
@@ -36,7 +38,7 @@ export default () => (
 
     <chip
       name="BTN_PREV"
-      pcbX="62mm"
+      pcbX="70mm"
       pcbY="68mm"
       footprint="pinrow2"
       pinLabels={{ pin1: "SIG", pin2: "GND" }}
@@ -44,16 +46,17 @@ export default () => (
 
     <chip
       name="BTN_PLAY"
-      pcbX="66mm"
+      pcbX="75mm"
       pcbY="68mm"
       footprint="pinrow2"
       pinLabels={{ pin1: "SIG", pin2: "GND" }}
     />
 
+    {/* Desk-top orientation: main USB-C data/power on top edge, secondary port on right edge */}
     <chip
       name="USB_C1"
-      pcbX="10mm"
-      pcbY="31mm"
+      pcbX="38mm"
+      pcbY="8mm"
       footprint="pinrow12"
       pinLabels={{
         pin1: "GND1",
@@ -73,8 +76,8 @@ export default () => (
 
     <chip
       name="USB_C2"
-      pcbX="10mm"
-      pcbY="16mm"
+      pcbX="103mm"
+      pcbY="20mm"
       footprint="pinrow6"
       pinLabels={{ pin1: "GND1", pin2: "VBUS1", pin3: "CC1", pin4: "CC2", pin5: "VBUS2", pin6: "GND2" }}
     />
@@ -101,8 +104,8 @@ export default () => (
     {/* Main digital / audio processor */}
     <chip
       name="U_XMOS"
-      pcbX="46mm"
-      pcbY="30mm"
+      pcbX="42mm"
+      pcbY="31mm"
       footprint="qfn60_w7_h7_p0.4mm_pw0.2mm_pl0.8mm"
       pinLabels={{
         pin1: "VDD_CORE",
@@ -143,23 +146,23 @@ export default () => (
     <chip
       name="U_FLASH"
       pcbX="30mm"
-      pcbY="52mm"
+      pcbY="49mm"
       footprint="soic8"
       pinLabels={{ pin1: "CS", pin2: "DO", pin3: "WP", pin4: "GND", pin5: "DI", pin6: "CLK", pin7: "HOLD", pin8: "VCC" }}
     />
 
     <chip
       name="OSC_44K"
-      pcbX="39mm"
-      pcbY="52mm"
+      pcbX="40mm"
+      pcbY="49mm"
       footprint="soic4"
       pinLabels={{ pin1: "EN", pin2: "GND", pin3: "OUT", pin4: "VDD" }}
     />
 
     <chip
       name="OSC_48K"
-      pcbX="48mm"
-      pcbY="52mm"
+      pcbX="50mm"
+      pcbY="49mm"
       footprint="soic4"
       pinLabels={{ pin1: "EN", pin2: "GND", pin3: "OUT", pin4: "VDD" }}
     />
@@ -167,8 +170,8 @@ export default () => (
     {/* DAC section */}
     <chip
       name="DAC_L"
-      pcbX="69mm"
-      pcbY="31mm"
+      pcbX="72mm"
+      pcbY="35mm"
       footprint="qfn32_w5_h5_p0.5mm_pw0.25mm_pl0.6mm"
       pinLabels={{
         pin1: "DVDD",
@@ -200,8 +203,8 @@ export default () => (
 
     <chip
       name="DAC_R"
-      pcbX="87mm"
-      pcbY="31mm"
+      pcbX="90mm"
+      pcbY="35mm"
       footprint="qfn32_w5_h5_p0.5mm_pw0.25mm_pl0.6mm"
       pinLabels={{
         pin1: "DVDD",
@@ -233,16 +236,16 @@ export default () => (
 
     <chip
       name="AMP_L"
-      pcbX="69mm"
-      pcbY="15mm"
+      pcbX="72mm"
+      pcbY="18mm"
       footprint="soic8"
       pinLabels={{ pin1: "OUTA", pin2: "INA-", pin3: "INA+", pin4: "VSS", pin5: "INB+", pin6: "INB-", pin7: "OUTB", pin8: "VDD" }}
     />
 
     <chip
       name="AMP_R"
-      pcbX="87mm"
-      pcbY="15mm"
+      pcbX="90mm"
+      pcbY="18mm"
       footprint="soic8"
       pinLabels={{ pin1: "OUTA", pin2: "INA-", pin3: "INA+", pin4: "VSS", pin5: "INB+", pin6: "INB-", pin7: "OUTB", pin8: "VDD" }}
     />
@@ -250,7 +253,7 @@ export default () => (
     {/* Output / audio jacks */}
     <chip
       name="JACK_SE"
-      pcbX="104mm"
+      pcbX="107mm"
       pcbY="24mm"
       footprint="pinrow5"
       pinLabels={{ pin1: "TIP", pin2: "RING1", pin3: "RING2", pin4: "SLEEVE", pin5: "DET" }}
@@ -258,7 +261,7 @@ export default () => (
 
     <chip
       name="JACK_BAL"
-      pcbX="104mm"
+      pcbX="107mm"
       pcbY="39mm"
       footprint="pinrow5"
       pinLabels={{ pin1: "L+", pin2: "L-", pin3: "R+", pin4: "R-", pin5: "GND" }}
@@ -266,7 +269,7 @@ export default () => (
 
     <chip
       name="MIC_SW"
-      pcbX="95mm"
+      pcbX="96mm"
       pcbY="10mm"
       footprint="qfn16_w3_h3_p0.5mm_pw0.25mm_pl0.6mm"
       pinLabels={{
@@ -293,23 +296,23 @@ export default () => (
     <chip
       name="LDO_1V8"
       pcbX="18mm"
-      pcbY="44mm"
+      pcbY="46mm"
       footprint="SOT-23-5"
       pinLabels={{ pin1: "IN", pin2: "GND", pin3: "EN", pin4: "NC", pin5: "OUT" }}
     />
 
     <chip
       name="LDO_3V3"
-      pcbX="27mm"
-      pcbY="44mm"
+      pcbX="28mm"
+      pcbY="46mm"
       footprint="SOT-23-5"
       pinLabels={{ pin1: "IN", pin2: "GND", pin3: "EN", pin4: "NC", pin5: "OUT" }}
     />
 
     <chip
       name="LDO_PERIPH"
-      pcbX="36mm"
-      pcbY="44mm"
+      pcbX="38mm"
+      pcbY="46mm"
       footprint="SOT-23-5"
       pinLabels={{ pin1: "IN", pin2: "GND", pin3: "EN", pin4: "NC", pin5: "OUT" }}
     />
@@ -317,24 +320,24 @@ export default () => (
     {/* Passive support parts */}
     <resistor name="R_CC1" resistance="5.1k" pcbX="16mm" pcbY="23mm" footprint="0402" />
     <resistor name="R_CC2" resistance="5.1k" pcbX="16mm" pcbY="20mm" footprint="0402" />
-    <resistor name="R_CFG1" resistance="6.8k" pcbX="24mm" pcbY="9mm" footprint="0402" />
-    <resistor name="R_VBUS_SENSE" resistance="10k" pcbX="18mm" pcbY="11mm" footprint="0402" />
-    <resistor name="R_I2C_SDA" resistance="4.7k" pcbX="44mm" pcbY="19mm" footprint="0402" />
-    <resistor name="R_I2C_SCL" resistance="4.7k" pcbX="46mm" pcbY="18mm" footprint="0402" />
-    <resistor name="R_SPDIF" resistance="75" pcbX="90mm" pcbY="12mm" footprint="0402" />
-    <resistor name="R_BTN_NEXT" resistance="10k" pcbX="57mm" pcbY="64mm" footprint="0402" />
-    <resistor name="R_BTN_PREV" resistance="10k" pcbX="61mm" pcbY="64mm" footprint="0402" />
-    <resistor name="R_BTN_PLAY" resistance="10k" pcbX="65mm" pcbY="64mm" footprint="0402" />
+    <resistor name="R_CFG1" resistance="6.8k" pcbX="22mm" pcbY="9mm" footprint="0402" />
+    <resistor name="R_VBUS_SENSE" resistance="10k" pcbX="18mm" pcbY="12mm" footprint="0402" />
+    <resistor name="R_I2C_SDA" resistance="4.7k" pcbX="46mm" pcbY="20mm" footprint="0402" />
+    <resistor name="R_I2C_SCL" resistance="4.7k" pcbX="48mm" pcbY="18mm" footprint="0402" />
+    <resistor name="R_SPDIF" resistance="75" pcbX="92mm" pcbY="12mm" footprint="0402" />
+    <resistor name="R_BTN_NEXT" resistance="10k" pcbX="64mm" pcbY="64mm" footprint="0402" />
+    <resistor name="R_BTN_PREV" resistance="10k" pcbX="69mm" pcbY="64mm" footprint="0402" />
+    <resistor name="R_BTN_PLAY" resistance="10k" pcbX="74mm" pcbY="64mm" footprint="0402" />
 
-    <capacitor name="C_LDO_1V8_IN" capacitance="1uF" pcbX="18mm" pcbY="58mm" footprint="0402" />
-    <capacitor name="C_LDO_1V8_OUT" capacitance="1uF" pcbX="18mm" pcbY="62mm" footprint="0402" />
-    <capacitor name="C_LDO_3V3_IN" capacitance="1uF" pcbX="28mm" pcbY="58mm" footprint="0402" />
-    <capacitor name="C_LDO_3V3_OUT" capacitance="1uF" pcbX="28mm" pcbY="62mm" footprint="0402" />
-    <capacitor name="C_LDO_PERIPH_IN" capacitance="1uF" pcbX="38mm" pcbY="58mm" footprint="0402" />
-    <capacitor name="C_LDO_PERIPH_OUT" capacitance="1uF" pcbX="38mm" pcbY="62mm" footprint="0402" />
-    <capacitor name="C_FLASH" capacitance="100nF" pcbX="26mm" pcbY="54mm" footprint="0402" />
-    <capacitor name="C_OSC_44K" capacitance="100nF" pcbX="46mm" pcbY="54mm" footprint="0402" />
-    <capacitor name="C_OSC_48K" capacitance="100nF" pcbX="56mm" pcbY="54mm" footprint="0402" />
+    <capacitor name="C_LDO_1V8_IN" capacitance="1uF" pcbX="18mm" pcbY="59mm" footprint="0402" />
+    <capacitor name="C_LDO_1V8_OUT" capacitance="1uF" pcbX="18mm" pcbY="63mm" footprint="0402" />
+    <capacitor name="C_LDO_3V3_IN" capacitance="1uF" pcbX="28mm" pcbY="59mm" footprint="0402" />
+    <capacitor name="C_LDO_3V3_OUT" capacitance="1uF" pcbX="28mm" pcbY="63mm" footprint="0402" />
+    <capacitor name="C_LDO_PERIPH_IN" capacitance="1uF" pcbX="38mm" pcbY="59mm" footprint="0402" />
+    <capacitor name="C_LDO_PERIPH_OUT" capacitance="1uF" pcbX="38mm" pcbY="63mm" footprint="0402" />
+    <capacitor name="C_FLASH" capacitance="100nF" pcbX="29mm" pcbY="55mm" footprint="0402" />
+    <capacitor name="C_OSC_44K" capacitance="100nF" pcbX="45mm" pcbY="55mm" footprint="0402" />
+    <capacitor name="C_OSC_48K" capacitance="100nF" pcbX="55mm" pcbY="55mm" footprint="0402" />
 
     {/* Nets: power and signal */}
     <trace from=".USB_C1 .VBUS1" to="net.VBUS_5V" />
